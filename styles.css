@@ -10,7 +10,6 @@ body {
     background-color: #d4a017;
     color: white;
     text-align: center;
-    padding: 5px 0;
     font-size: 14px;
     position: fixed;
     width: 100%;
@@ -20,6 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+    transition: opacity 0.3s ease;
 }
 
 .contact-left, .contact-center, .contact-right {
@@ -113,6 +113,7 @@ body {
 
 .submenu li {
     padding: 5px 20px;
+    position: relative;
 }
 
 .submenu li a {
@@ -120,14 +121,27 @@ body {
     color: #333;
 }
 
-.submenu .submenu {
+.sub-submenu {
+    display: none;
+    position: absolute;
     left: 100%;
     top: 0;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    border-radius: 5px;
+}
+
+.submenu li:hover .sub-submenu {
+    display: block;
 }
 
 .spacer {
     height: 500px;
     background: transparent;
+    margin-top: 90px; /* Prevents content from going under menu */
 }
 
 footer {
