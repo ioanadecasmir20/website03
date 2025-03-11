@@ -158,6 +158,13 @@ body {
     line-height: 1.6;
 }
 
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .course-box {
     width: 300px;
     border-radius: 8px;
