@@ -9,12 +9,15 @@
     <script>
         document.addEventListener("scroll", function () {
             var topHeader = document.querySelector(".top-header");
+            var mainHeader = document.querySelector(".main-header");
             if (window.scrollY > 50) {
                 topHeader.style.opacity = "0";
                 topHeader.style.pointerEvents = "none";
+                mainHeader.style.top = "0";
             } else {
                 topHeader.style.opacity = "1";
                 topHeader.style.pointerEvents = "auto";
+                mainHeader.style.top = "30px";
             }
         });
     </script>
