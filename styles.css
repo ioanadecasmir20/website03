@@ -188,11 +188,9 @@ body {
     left: 0;
     width: 100%;
     height: auto;
-    background: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
-    padding: 20px;
-    transition: background 0.3s;
+    padding: 5px;
     box-sizing: border-box;
 }
 
