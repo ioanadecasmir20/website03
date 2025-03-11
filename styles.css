@@ -167,21 +167,20 @@ body {
 
 .course-box {
     width: 300px;
+    height: 200px;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease-in-out;
 }
 
 .course-box:hover {
     transform: scale(1.05);
-}
-
-.course-image {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
 }
 
 .course-content {
