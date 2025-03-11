@@ -22,6 +22,16 @@ body {
     transition: opacity 0.3s ease;
 }
 
+.top-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top-header a:hover {
+    text-decoration: underline;
+}
+
 .main-header {
     background-color: #fff;
     padding: 15px 0;
