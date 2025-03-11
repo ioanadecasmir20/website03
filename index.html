@@ -7,54 +7,54 @@
     <title>A-Z Learning Academy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    
 <body>
-    <header>
-        <img src="images/AZLAlogo.png" alt="A-Z Learning Academy Logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="top-header">
+        <div class="container">
+            <p>Call Us: 0208 429 1202 | Email: info@azlearningacademy.com | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
+        </div>
+    </div>
+    
+    <header class="main-header">
+        <div class="container">
+            <img src="images/AZLAlogo.png" alt="A-Z Learning Academy Logo" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#courses">Courses ▾</a>
+                        <ul class="submenu">
+                            <li class="dropdown">
+                                <a href="#security">Security ▾</a>
+                                <ul class="submenu">
+                                    <li><a href="#sia-door-supervisor">SIA Door Supervisor</a></li>
+                                    <li><a href="#sia-security-officer">SIA Security Officer</a></li>
+                                    <li><a href="#cctv-operator">SIA CCTV Operator</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#first-aid">First Aid Training</a></li>
+                            <li><a href="#assessors">Assessors</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#e-learning">E-Learning ▾</a>
+                        <ul class="submenu">
+                            <li><a href="#business-admin">Business Administration</a></li>
+                            <li><a href="#conflict-management">Conflict Management</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#on-site-training">On Site Training</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <section id="home">
         <h1>Welcome to A-Z Learning Academy</h1>
         <p>Your gateway to professional development and learning excellence.</p>
         <a href="#courses" class="cta-button">Explore Courses</a>
-    </section>
-    
-    <section id="courses">
-        <h2>Our Courses</h2>
-        <p>Explore a variety of training programs designed for your success.</p>
-        <div class="course-list">
-            <div class="course">
-                <h3>Security Training</h3>
-                <p>Prepare for a successful career in security.</p>
-            </div>
-            <div class="course">
-                <h3>Business Administration</h3>
-                <p>Enhance your management and administrative skills.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>A-Z Learning Academy is committed to providing high-quality vocational training and professional development programs.</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
     </section>
     
     <footer>
