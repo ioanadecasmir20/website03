@@ -165,6 +165,12 @@ body {
     flex-wrap: wrap;
 }
 
+.course-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
 .course-box {
     width: 300px;
     height: 200px;
