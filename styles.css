@@ -55,7 +55,7 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    top: 30px;
+    top: 20px;
     z-index: 999;
     transition: top 0.3s ease;
 }
@@ -157,6 +157,7 @@ footer {
 
 
 .hero-section {
+    top: 30px;
     height: 100vh;
     background: url('images/home-image.jpg') no-repeat center center/cover;
 }
