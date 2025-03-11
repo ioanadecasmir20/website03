@@ -116,9 +116,9 @@ body {
 }
 
 .hero-section {
-    height: 100vh;
+    height: 80vh;
     background: url('images/home-image.jpg') no-repeat center center/cover;
-    margin-top: 90px; /* Ensures the section starts right below the menu */
+    margin-top: 100px; /* Ensures the section starts right below the menu */
 }
 
 .spacer {
