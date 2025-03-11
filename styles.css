@@ -229,6 +229,98 @@ body {
     background-color: #8d6b0c;
 }
 
+.latest-courses {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fdfaf5;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #b8870f;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #b8870f;
+    margin: 10px auto 0;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 courses per row */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.course-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.course-item img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.course-item:hover img {
+    transform: scale(1.05);
+}
+
+.course-item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b8870f;
+}
+
+.discount {
+    color: red;
+    font-weight: bold;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+    .course-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-list {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on mobile */
+    }
+}
+
 footer {
     background: #333;
     color: white;
