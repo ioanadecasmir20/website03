@@ -186,18 +186,16 @@ body {
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease-in-out;
-    z-index: -1;
 }
 
 .course-box:hover .course-image {
-    transform: scale(1.1); /* Only zooms the image */
+    transform: scale(1.1);
 }
 
 .course-content {
     text-align: center;
     color: black;
     padding: 20px;
-    background: none;
     width: 100%;
     box-sizing: border-box;
     position: relative;
