@@ -166,8 +166,8 @@ body {
 }
 
 .course-box {
-    width: 300px;
-    height: 200px;
+    width: 350px; /* Increased size */
+    height: 250px; /* Increased size */
     border-radius: 8px;
     overflow: hidden;
     position: relative;
@@ -175,7 +175,7 @@ body {
     background-position: center;
     transition: transform 0.3s ease-in-out;
     display: flex;
-    align-items: flex-end; /* Ensures content is positioned properly */
+    align-items: flex-end;
 }
 
 .course-box:hover {
@@ -201,24 +201,24 @@ body {
 }
 
 .course-content h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 8px;
     color: #fff;
 }
 
 .course-content p {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
 .learn-more {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px 15px;
     background-color: #b8870f;
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     transition: background 0.3s;
 }
