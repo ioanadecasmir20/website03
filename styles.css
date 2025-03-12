@@ -660,35 +660,23 @@ body {
     text-align: center;
 }
 
+/* Testimonial Section */
 .testimonial-section {
+    max-width: 1000px;
+    margin: 40px auto;
     text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f5eb;
 }
 
-.testimonial-section h2 {
-    font-size: 28px;
+.testimonial-title {
+    font-size: 32px;
     font-weight: bold;
     color: #b8870f;
     margin-bottom: 20px;
 }
 
-.carousel {
-    position: relative;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.testimonial-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
 .testimonial {
-    min-width: 100%;
     display: none;
-    text-align: center;
+    padding: 30px;
 }
 
 .testimonial.active {
@@ -696,69 +684,66 @@ body {
 }
 
 .testimonial img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #b8870f;
 }
 
-.testimonial h3 {
+.testimonial-text {
     font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.testimonial-name {
+    font-size: 22px;
     font-weight: bold;
     color: #b8870f;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-.testimonial p {
-    font-size: 16px;
-    color: #333;
-    max-width: 500px;
-    margin: auto;
+/* Carousel Navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.prev-btn,
-.next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #b8870f;
+.carousel-nav button {
+    background: #b8870f;
     color: white;
+    font-size: 24px;
     border: none;
     padding: 10px 15px;
+    margin: 0 10px;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.prev-btn:hover,
-.next-btn:hover {
-    background-color: #8d6b0c;
+.carousel-nav button:hover {
+    background: #8d6b0c;
 }
 
-.prev-btn {
-    left: 0;
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
-.next-btn {
-    right: 0;
-}
-
-.dots {
-    margin-top: 20px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
     margin: 0 5px;
-    background-color: #ddd;
     border-radius: 50%;
-    display: inline-block;
     cursor: pointer;
 }
 
-.dot.active {
-    background-color: #b8870f;
+.carousel-dots .dot.active {
+    background: #b8870f;
 }
 
 footer {
