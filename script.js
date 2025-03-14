@@ -14,6 +14,33 @@ document.addEventListener("DOMContentLoaded", function () {
             hamburger.classList.remove("active");
         });
     });
+
+    document.querySelectorAll(".dropdown > a").forEach((menu) => {
+        menu.addEventListener("click", function (event) {
+            event.preventDefault();
+            let submenu = this.nextElementSibling;
+
+            // Close all submenus
+            document.querySelectorAll(".submenu").forEach((el) => {
+                if (el !== submenu) {
+                    el.style.display = "none";
+                    el.style.opacity = "0";
+                    el.style.visibility = "hidden";
+                }
+            });
+
+            // Toggle the clicked submenu
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none";
+                submenu.style.opacity = "0";
+                submenu.style.visibility = "hidden";
+            } else {
+                submenu.style.display = "block";
+                submenu.style.opacity = "1";
+                submenu.style.visibility = "visible";
+            }
+        });
+    });
     
     // FAQ Toggle Functionality
     const faqItems = document.querySelectorAll(".faq-item");
