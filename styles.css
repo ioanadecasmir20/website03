@@ -32,6 +32,12 @@ body {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    .top-header {
+        display: none; /* Hides the contact menu on mobile */
+    }
+}
+
 .main-header {
     background-color: #fff;
     padding: 15px 0;
