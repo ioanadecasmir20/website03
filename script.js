@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ✅ Mobile Submenu Toggle (Fix for opening/closing submenus)
+    // ✅ Fix submenu toggling on mobile
     document.querySelectorAll(".dropdown > a").forEach(menu => {
         menu.addEventListener("click", function (event) {
             event.preventDefault(); // Prevent default link behavior
             let submenu = this.nextElementSibling;
 
-            // Close all other open submenus
+            // Close other open submenus
             document.querySelectorAll(".submenu").forEach(el => {
                 if (el !== submenu) {
                     el.classList.remove("active");
@@ -33,6 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // ✅ Toggle the clicked submenu
             submenu.classList.toggle("active");
+        });
+    });
+
+    // ✅ Fix sub-submenu toggle issue
+    document.querySelectorAll(".submenu li a").forEach(submenuItem => {
+        submenuItem.addEventListener("click", function (event) {
+            let subSubMenu = this.nextElementSibling;
+            if (subSubMenu && subSubMenu.classList.contains("sub-submenu")) {
+                event.preventDefault();
+                subSubMenu.classList.toggle("active");
+            }
         });
     });
 
