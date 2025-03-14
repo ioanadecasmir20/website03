@@ -83,6 +83,7 @@ body {
     }
 }
 
+/* ✅ Main Menu */
 .menu {
     list-style: none;
     margin: 0;
@@ -106,8 +107,8 @@ body {
     white-space: nowrap;
 }
 
-/* ✅ Submenu Styling for Desktop */
-.submenu {
+/* ✅ Submenu Styling (Opens in Center) */
+.submenu, .sub-submenu {
     display: none;
     position: absolute;
     left: 50%;
@@ -117,67 +118,38 @@ body {
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
-    min-width: 250px; /* Ensures text fits */
-    max-width: 300px;
+    min-width: 260px; /* Ensures text fits */
+    max-width: 320px;
     text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 1000;
+    white-space: normal; /* ✅ Allows text wrapping */
 }
 
-.submenu.right-align {
-    left: auto;
-    right: 0;
-}
-
-/* ✅ Ensure submenus are visible */
-.dropdown:hover > .submenu,
-.submenu:hover {
+/* ✅ Ensure submenus are visible when active */
+.submenu.active, .sub-submenu.active {
     display: block;
     opacity: 1;
     visibility: visible;
 }
 
 /* ✅ Submenu Items */
-.submenu li {
+.submenu li, .sub-submenu li {
     position: relative;
     width: 100%;
+    padding: 10px;
 }
 
-/* ✅ Sub-Submenu Position */
+/* ✅ Sub-submenu Opens Below */
 .sub-submenu {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: translateX(0%);
     top: 100%;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 5px;
-    min-width: 250px;
-    max-width: 300px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ✅ Fix Hover on Sub-Submenus */
-.submenu li:hover > .sub-submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Default Navigation */
-.nav-menu {
-    display: flex;
-}
-
-/* Hide menu on mobile */
+/* ✅ Mobile Responsive Fixes */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -212,39 +184,7 @@ body {
         width: 100%;
     }
 
-    /* Hamburger Menu Icon */
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        width: 30px;
-        height: 25px;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-
-    .hamburger-menu span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #b8870f;
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    /* Rotate animation for hamburger icon */
-    .hamburger-menu.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger-menu.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger-menu.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    
+    /* ✅ Fix for Mobile Submenu */
     .submenu, .sub-submenu {
         position: static;
         transform: none;
