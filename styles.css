@@ -229,7 +229,7 @@ body {
     background-color: #8d6b0c;
 }
 
-/* Latest Courses - Match Popular Courses Design */
+/* Latest Courses - Matches Most Popular Courses Design */
 .latest-courses {
     padding: 60px 20px;
     text-align: center;
@@ -244,16 +244,14 @@ body {
 }
 
 .latest-courses-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 per row */
     gap: 20px;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
 }
 
 .latest-course-card {
-    width: 280px;
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -358,6 +356,19 @@ body {
     color: #666;
     margin: 5px 0;
     text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .latest-courses-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .latest-courses-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on mobile */
+    }
 }
 
 .section-title {
