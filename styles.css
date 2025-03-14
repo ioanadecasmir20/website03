@@ -105,47 +105,66 @@ body {
     display: block;
 }
 
-/* Ensure dropdown menus are centrally aligned */
-.submenu, .sub-submenu {
+/* ✅ Fix Submenu Behavior */
+.submenu {
+    display: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: max-content; /* Adjust width based on content */
-    text-align: center;
+    width: 250px; /* Set width to prevent text wrapping */
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
-    display: none;
-}
-
-/* When hovering, show submenu */
-.dropdown:hover > .submenu {
-    display: block;
-}
-
-/* Adjust sub-submenu alignment */
-.submenu li:hover .sub-submenu {
-    display: block;
-    top: 100%; /* Ensure it appears below the submenu */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.submenu, .sub-submenu {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2000; /* Ensure it's above other elements */
 }
 
+/* ✅ Show submenu on hover */
 .dropdown:hover > .submenu,
 .submenu:hover {
+    display: block;
     opacity: 1;
     visibility: visible;
 }
 
+/* ✅ Allow submenus to be accessible */
+.submenu li {
+    position: relative;
+}
+
+/* ✅ Ensure sub-submenu stays open */
 .submenu li:hover > .sub-submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ✅ Fix Submenu Position to Prevent Overlapping */
+.sub-submenu {
+    display: none;
+    position: absolute;
+    top: 50%; /* Align sub-submenu correctly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2500;
+}
+
+/* ✅ Ensure sub-submenu is always clickable */
+.submenu li:hover > .sub-submenu {
+    display: block;
     opacity: 1;
     visibility: visible;
 }
