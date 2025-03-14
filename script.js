@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburger.classList.toggle("active");
     });
 
-    // ✅ Close menu on mobile when clicking a link
+    // ✅ Close mobile menu when clicking a link
     document.querySelectorAll(".menu a").forEach(link => {
         link.addEventListener("click", function () {
             if (window.innerWidth <= 768) { // Only close on mobile
