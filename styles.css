@@ -103,25 +103,27 @@ body {
     font-weight: bold;
     padding: 10px;
     display: block;
+    white-space: nowrap;
 }
 
 /* ✅ Submenu Styling for Desktop */
 .submenu {
     display: none;
     position: absolute;
-    left: 0;
-    top: 100%;
-    width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
     border-radius: 5px;
+    min-width: 250px; /* Ensures text fits */
+    max-width: 300px;
+    text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 2000;
-    overflow: hidden;
+    z-index: 1000;
 }
 
 .submenu.right-align {
@@ -140,20 +142,24 @@ body {
 /* ✅ Submenu Items */
 .submenu li {
     position: relative;
-    white-space: nowrap; /* Prevents text wrapping */
-    padding: 10px 15px;
+    width: 100%;
 }
 
 /* ✅ Sub-Submenu Position */
 .sub-submenu {
     display: none;
     position: absolute;
-    left: 100%;
-    top: 0;
-    min-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
     border-radius: 5px;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -239,24 +245,17 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
     
-    .submenu {
-        position: relative;
+    .submenu, .sub-submenu {
+        position: static;
+        transform: none;
         display: none;
+        opacity: 1;
+        visibility: visible;
         width: 100%;
-        left: 0;
-        top: auto;
-        max-height: 300px; /* Restrict height */
-        overflow-y: auto; /* Scrollable on small screens */
-        border-radius: 0;
+        text-align: center;
     }
 
-    .submenu li {
-        text-align: left;
-        padding: 10px;
-    }
-
-    /* ✅ Make sure submenus open properly */
-    .submenu.active {
+    .submenu.active, .sub-submenu.active {
         display: block;
     }
 }
