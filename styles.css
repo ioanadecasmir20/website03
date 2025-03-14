@@ -899,6 +899,36 @@ body {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .courses-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 1 course per row */
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .course-card {
+        width: 100%; /* Full width */
+        max-width: 400px; /* Limit max size */
+        margin: auto; /* Center courses */
+    }
+
+    .course-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .latest-courses-container {
+        grid-template-columns: repeat(1, 1fr); /* Ensure 1 per row */
+    }
+
+    .latest-course-card {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+}
+
 /* Testimonial Section */
 .testimonial-section {
     max-width: 1000px;
