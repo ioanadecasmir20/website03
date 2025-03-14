@@ -105,61 +105,47 @@ body {
     display: block;
 }
 
-/* ✅ Fix Submenu Behavior */
-.submenu {
-    display: none;
+/* Ensure dropdown menus are centrally aligned */
+.submenu, .sub-submenu {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content; /* Adjust width based on content */
+    text-align: center;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 10px 0;
-    min-width: 200px;
     border-radius: 5px;
+    display: none;
+}
+
+/* When hovering, show submenu */
+.dropdown:hover > .submenu {
+    display: block;
+}
+
+/* Adjust sub-submenu alignment */
+.submenu li:hover .sub-submenu {
+    display: block;
+    top: 100%; /* Ensure it appears below the submenu */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.submenu, .sub-submenu {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 1000;
 }
 
-/* Show submenu on hover (with delay for usability) */
 .dropdown:hover > .submenu,
 .submenu:hover {
-    display: block;
     opacity: 1;
     visibility: visible;
 }
 
-/* ✅ Ensure submenus don't disappear immediately */
-.submenu li {
-    position: relative;
-}
-
-/* ✅ Allow submenus to be clickable */
 .submenu li:hover > .sub-submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ✅ Fix Submenu Position (prevents overlapping content) */
-.sub-submenu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%; /* Push submenu to the right */
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    padding: 10px 0;
-    min-width: 200px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.submenu li:hover > .sub-submenu {
-    display: block;
     opacity: 1;
     visibility: visible;
 }
@@ -235,6 +221,10 @@ body {
     
     .hamburger-menu.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .submenu, .sub-submenu {
+        width: 90%; /* Ensure it fits on smaller screens */
     }
 }
 
