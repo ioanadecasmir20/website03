@@ -2,50 +2,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger-menu");
     const navMenu = document.getElementById("nav-menu");
 
+    // ✅ Toggle mobile menu
     hamburger.addEventListener("click", function () {
         navMenu.classList.toggle("active");
         hamburger.classList.toggle("active");
     });
 
-    // Close menu when clicking a link
+    // ✅ Close menu on mobile when clicking a link
     document.querySelectorAll(".menu a").forEach(link => {
         link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
-            hamburger.classList.remove("active");
+            if (window.innerWidth <= 768) { // Only close on mobile
+                navMenu.classList.remove("active");
+                hamburger.classList.remove("active");
+            }
         });
     });
 
-    document.querySelectorAll(".dropdown > a").forEach((menu) => {
+    // ✅ Mobile Submenu Toggle (Fix for opening/closing submenus)
+    document.querySelectorAll(".dropdown > a").forEach(menu => {
         menu.addEventListener("click", function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default link behavior
             let submenu = this.nextElementSibling;
 
-            // Close other open submenus
-            document.querySelectorAll(".submenu").forEach((el) => {
+            // Close all other open submenus
+            document.querySelectorAll(".submenu").forEach(el => {
                 if (el !== submenu) {
                     el.classList.remove("active");
                 }
             });
 
-            // Toggle visibility
+            // ✅ Toggle the clicked submenu
             submenu.classList.toggle("active");
         });
     });
 
-            // Toggle the clicked submenu
-            if (submenu.style.display === "block") {
-                submenu.style.display = "none";
-                submenu.style.opacity = "0";
-                submenu.style.visibility = "hidden";
-            } else {
-                submenu.style.display = "block";
-                submenu.style.opacity = "1";
-                submenu.style.visibility = "visible";
-            }
-        });
-    });
-    
-    // FAQ Toggle Functionality
+    // ✅ FAQ Toggle Functionality
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach(item => {
@@ -66,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Testimonial Carousel Functionality
+    // ✅ Testimonial Carousel Functionality
     let currentIndex = 0;
     const testimonials = document.querySelectorAll(".testimonial");
     const dots = document.querySelectorAll(".dot");
@@ -97,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Auto-slide every 5 seconds
+    // ✅ Auto-slide every 5 seconds
     setInterval(() => {
         currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
         showTestimonial(currentIndex);
