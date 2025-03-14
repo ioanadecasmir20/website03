@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".menu a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("active");
+        });
+    });
+    
     // FAQ Toggle Functionality
     const faqItems = document.querySelectorAll(".faq-item");
 
