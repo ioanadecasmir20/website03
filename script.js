@@ -20,14 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             let submenu = this.nextElementSibling;
 
-            // Close all submenus
+            // Close other open submenus
             document.querySelectorAll(".submenu").forEach((el) => {
                 if (el !== submenu) {
-                    el.style.display = "none";
-                    el.style.opacity = "0";
-                    el.style.visibility = "hidden";
+                    el.classList.remove("active");
                 }
             });
+
+            // Toggle visibility
+            submenu.classList.toggle("active");
+        });
+    });
 
             // Toggle the clicked submenu
             if (submenu.style.display === "block") {
